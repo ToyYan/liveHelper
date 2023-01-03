@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Live Helper",
+  "description":"直播助手",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/helper.js"
+      ],
+      "matches": ["https://zs.kwaixiaodian.com/page/helper"]
+    }
+  ]
+}
