@@ -66,8 +66,8 @@ function importOrder() {
 </script>
 <template>
   <div class="handle">
-    <div class="export" @click="exportOrder">👆</div>
-    <div class="file"><input @change="importOrder" ref="inputFileEl" type="file" id="input" />👌</div>
+    <div class="export" @click="exportOrder">接</div>
+    <div class="file"><input @change="importOrder" ref="inputFileEl" type="file" id="input" />发</div>
   </div>
 </template>
 <style lang="scss" scoped>
