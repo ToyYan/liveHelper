@@ -2,13 +2,42 @@
   "manifest_version": 3,
   "name": "Live Helper",
   "description":"直播助手",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "content_scripts": [
     {
       "js": [
-        "scripts/helper.js"
+        "src/content-script/ksLiveHelper/index.ts",
+        "src/content-script/ksLiveHelper/inject.ts"
       ],
-      "matches": ["https://zs.kwaixiaodian.com/page/helper"]
+      "matches": ["https://zs.kwaixiaodian.com/page/helper*"]
+    },
+    {
+      "js": [
+        "src/content-script/orderExport/index.ts"
+      ],
+      "matches": ["https://s.kwaixiaodian.com/*", "https://vuejs.org/api/*"]
     }
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://zs.kwaixiaodian.com/*"
+      ],
+      "resources": [
+        "assets/sounds/message1.mp3"
+      ],
+      "use_dynamic_url": true
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["https://*.kwaixiaodian.com/*"]
+  },
+  "permissions": [
+    "tabs"
   ]
 }
+

@@ -1,0 +1,11 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "jsx": "preserve",
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
